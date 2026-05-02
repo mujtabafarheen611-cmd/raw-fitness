@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --color-brand-bg: #0a0a0a;
+  --color-brand-accent: #ff4e00;
+  --color-brand-card: #161616;
+  --color-brand-border: #262626;
+  --color-brand-text: #ffffff;
+  --color-brand-dim: #888888;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-brand-text font-sans antialiased;
+  }
+}
+
+.tight-heading {
+  @apply tracking-[-0.05em] leading-[0.9];
+}
+
+.status-pill {
+  @apply bg-[#1a2e1a] text-[#4ade80] text-[11px] px-[10px] py-[4px] rounded-full uppercase font-bold tracking-widest border border-[#4ade80]/10;
+}
+
+.service-tag {
+  @apply border border-brand-border px-4 py-3 rounded-sm text-[13px] flex items-center gap-2 transition-colors hover:border-brand-accent/50;
+}
+
+.service-tag::before {
+  content: '•';
+  @apply text-brand-accent;
+}
